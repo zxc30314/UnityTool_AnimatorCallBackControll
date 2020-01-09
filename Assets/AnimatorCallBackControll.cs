@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 using UnityEngine.Events;
 
 
 public class AnimatorCallBackControll : MonoBehaviour
 {
     public Animator ator;
- 
+    [ListDrawerSettings(HideAddButton = true, HideRemoveButton = false, ListElementLabelName = "Name")]
     public List<AnimatorStateCallBack> AnimatorStateCallBack = new List<AnimatorStateCallBack>();
     List<AnimatorStateCallBack> tempAnimatorStateCallBack = new List<AnimatorStateCallBack>();
     string Root;
@@ -25,7 +26,7 @@ public class AnimatorCallBackControll : MonoBehaviour
 
     }
 #if UNITY_EDITOR
-  [ContextMenu("ReadAllStates")]
+    [Button]
     private void ReadAllStates()
     {
         path = "";
@@ -147,7 +148,7 @@ public class AnimatorCallBackControll : MonoBehaviour
 
 
     }
-    public  void AnimationOnPlay(AnimatorStateInfo info)
+    public override void AnimationOnPlay(AnimatorStateInfo info)
     {
 
         for (int i = 0; i < AnimatorStateCallBack.Count; i++)
@@ -159,7 +160,7 @@ public class AnimatorCallBackControll : MonoBehaviour
             }
         }
     }
-    public  void AnimationOnPlayEnd(AnimatorStateInfo info)
+    public override void AnimationOnPlayEnd(AnimatorStateInfo info)
     {
 
 
@@ -185,7 +186,7 @@ public class AnimatorCallBackControll : MonoBehaviour
 public class AnimatorStateCallBack
 {
 
-  
+    [ReadOnly]
     public string Name, Path;
     [HideInInspector]
     public int HashCode;
