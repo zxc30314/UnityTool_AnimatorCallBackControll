@@ -148,7 +148,7 @@ public class AnimatorCallBackControll : MonoBehaviour
 
 
     }
-    public override void AnimationOnPlay(AnimatorStateInfo info)
+    public  void AnimationOnPlay(AnimatorStateInfo info)
     {
 
         for (int i = 0; i < AnimatorStateCallBack.Count; i++)
@@ -160,7 +160,7 @@ public class AnimatorCallBackControll : MonoBehaviour
             }
         }
     }
-    public override void AnimationOnPlayEnd(AnimatorStateInfo info)
+    public  void AnimationOnPlayEnd(AnimatorStateInfo info)
     {
 
 

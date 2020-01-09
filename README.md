@@ -3,3 +3,11 @@
 
 A simple function, that you can do callback  StateMachineBehaviour  in the Inspector.
 
+
+### Prerequisites
+* [Sirenix Odin - Inspector and Serializer](https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041)
+
+
+### Demo
+
+![image](Sample.gif)
